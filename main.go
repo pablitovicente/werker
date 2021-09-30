@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/pablitovicente/wrkpool/pkg/control"
 	"github.com/pablitovicente/wrkpool/pkg/ingress"
 	"github.com/pablitovicente/wrkpool/pkg/models"
 	"github.com/pablitovicente/wrkpool/pkg/process"
+	"github.com/pablitovicente/wrkpool/pkg/storage"
 )
 
 func main() {
@@ -35,15 +34,5 @@ func main() {
 	// 	}
 	// }()
 
-	// Print results of jobs
-	proccessed := 0
-	for a := 1; a <= numJobs; a++ {
-		res := <-results
-		proccessed++
-		// Update stats
-		pendingJobs <- numJobs - proccessed
-		fmt.Printf("Job ID: %d fib(%d) === %d (Processing Stats: %+v)\n", res.ID, res.Payload, res.Result, res.ProcStats)
-		fmt.Println("................................................")
-		fmt.Println("")
-	}
+	storage.Log(numJobs, pendingJobs, results)
 }
