@@ -1,4 +1,4 @@
-package processing
+package process
 
 import "github.com/pablitovicente/wrkpool/models"
 

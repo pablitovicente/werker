@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-	"time"
 
 	"github.com/pablitovicente/wrkpool/control"
 	"github.com/pablitovicente/wrkpool/ingress"
 	"github.com/pablitovicente/wrkpool/models"
-	"github.com/pablitovicente/wrkpool/processing"
+	"github.com/pablitovicente/wrkpool/process"
 )
 
 func main() {
@@ -22,19 +21,19 @@ func main() {
 	pendingJobs := make(chan int)
 
 	// Create a new worker pool
-	processing.NewPool(numOfWorkers, jobs, results)
+	process.NewPool(numOfWorkers, jobs, results)
 	// Generate fake jobs
 	go ingress.SeedSampleData(numJobs, jobs)
 	// Stats collection
 	go control.CollectStats(pendingJobs)
 
 	// Just to show non-blocking nature of this code
-	go func() {
-		for {
-			fmt.Println("I just run every 500ms to show the non blocking nature of this code")
-			time.Sleep(500 * time.Millisecond)
-		}
-	}()
+	// go func() {
+	// 	for {
+	// 		fmt.Println("I just run every 500ms to show the non blocking nature of this code")
+	// 		time.Sleep(500 * time.Millisecond)
+	// 	}
+	// }()
 
 	// Print results of jobs
 	proccessed := 0
