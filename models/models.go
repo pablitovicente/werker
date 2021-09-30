@@ -15,7 +15,6 @@ type WorkerStats struct {
 	OperationID int
 }
 
-// For general stats
 type Stats struct {
 	OperationID int
 	JobID       int
