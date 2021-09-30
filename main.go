@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/pablitovicente/wrkpool/control"
-	"github.com/pablitovicente/wrkpool/ingress"
-	"github.com/pablitovicente/wrkpool/models"
-	"github.com/pablitovicente/wrkpool/process"
+	"github.com/pablitovicente/wrkpool/pkg/control"
+	"github.com/pablitovicente/wrkpool/pkg/ingress"
+	"github.com/pablitovicente/wrkpool/pkg/models"
+	"github.com/pablitovicente/wrkpool/pkg/process"
 )
 
 func main() {

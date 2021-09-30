@@ -3,8 +3,8 @@ package process
 import (
 	"time"
 
-	"github.com/pablitovicente/wrkpool/models"
-	"github.com/pablitovicente/wrkpool/steps"
+	"github.com/pablitovicente/wrkpool/pkg/models"
+	"github.com/pablitovicente/wrkpool/pkg/steps"
 )
 
 // The actual worker; multiple instances of this will be created

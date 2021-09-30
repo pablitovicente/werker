@@ -1,6 +1,6 @@
 package process
 
-import "github.com/pablitovicente/wrkpool/models"
+import "github.com/pablitovicente/wrkpool/pkg/models"
 
 func NewPool(numOfWorkers int, jobs, results chan models.Job) {
 	for w := 1; w <= numOfWorkers; w++ {

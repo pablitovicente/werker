@@ -3,7 +3,7 @@ package process
 import (
 	"math/rand"
 
-	"github.com/pablitovicente/wrkpool/models"
+	"github.com/pablitovicente/wrkpool/pkg/models"
 )
 
 func GenerateJob(ID int) models.Job {
