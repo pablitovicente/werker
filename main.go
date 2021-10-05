@@ -10,9 +10,9 @@ import (
 
 func main() {
 	// Configuration for the number of fake jobs
-	const numJobs = 32
+	const numJobs = 20
 	// Number of workers to process the jobs
-	const numOfWorkers = 32
+	const numOfWorkers = 4
 
 	// All required channels
 	jobs := make(chan models.Job, numJobs)

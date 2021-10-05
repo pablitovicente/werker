@@ -4,6 +4,7 @@ import (
 	"math/rand"
 
 	"github.com/pablitovicente/wrkpool/pkg/models"
+	"github.com/pablitovicente/wrkpool/pkg/steps"
 )
 
 func SeedSampleData(numJobs int, jobs chan<- models.Job) {
@@ -20,8 +21,9 @@ func generateJob(ID int) models.Job {
 	randPayload := uint(rand.Intn(max-min) + min)
 
 	job := models.Job{
-		ID:      ID,
-		Payload: randPayload,
+		ID:       ID,
+		Payload:  randPayload,
+		Executor: steps.Fib{},
 	}
 
 	return job

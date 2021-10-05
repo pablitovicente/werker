@@ -7,6 +7,11 @@ type Job struct {
 	Payload   uint
 	Result    interface{}
 	ProcStats []WorkerStats
+	Executor  Step
+}
+
+type Step interface {
+	Exec(uint) uint
 }
 
 type WorkerStats struct {
